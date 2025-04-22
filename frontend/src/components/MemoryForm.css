@@ -1,0 +1,431 @@
+/* frontend/src/components/MemoryForm.css */
+.memory-form-container {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memory-form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Compact Social Media Style Form */
+.compact-memory-form-container {
+  background: #ffffff;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.compact-memory-form {
+  padding: 15px;
+}
+
+.compact-memory-form .form-header {
+  display: flex;
+  gap: 15px;
+}
+
+.compact-memory-form .user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.compact-memory-form .user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compact-memory-form .default-avatar {
+  width: 100%;
+  height: 100%;
+  background: var(--purple);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.compact-memory-form .form-content {
+  flex: 1;
+}
+
+.compact-memory-form textarea {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  resize: none;
+  font-size: 1.05em;
+  font-family: var(--font-body);
+  color: #333;
+  background: transparent;
+  outline: none;
+  min-height: 20px;
+}
+
+.compact-memory-form textarea::placeholder {
+  color: #999;
+}
+
+.compact-memory-form .extended-options {
+  margin-top: 15px;
+}
+
+.compact-memory-form .image-preview {
+  position: relative;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  max-height: 220px;
+}
+
+.compact-memory-form .image-preview img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.compact-memory-form .remove-image {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9em;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.compact-memory-form .remove-image:hover {
+  opacity: 1;
+}
+
+.compact-memory-form .emotion-selector {
+  margin-bottom: 15px;
+}
+
+.compact-memory-form .emotion-selector select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: #333;
+  background-color: #fafafa;
+  cursor: pointer;
+}
+
+.compact-memory-form .emotion-selector select:focus {
+  outline: none;
+  border-color: var(--purple);
+}
+
+.compact-memory-form .form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.compact-memory-form .form-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.compact-memory-form .action-button {
+  background: none;
+  border: none;
+  color: var(--purple);
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  width: 36px;
+  height: 36px;
+}
+
+.compact-memory-form .action-button:hover {
+  background: rgba(163, 135, 247, 0.1);
+}
+
+.compact-memory-form .post-button {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.compact-memory-form .post-button:hover:not(:disabled) {
+  background: #8a6be2;
+  transform: translateY(-2px);
+}
+
+.compact-memory-form .post-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.compact-memory-form .post-button.posting {
+  background: #8a6be2;
+}
+
+/* Memory Form Styling */
+.memory-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.memory-form h3 {
+  font-family: 'Noto Serif', serif;
+  color: #7c73a6;
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: normal;
+  text-align: center;
+  position: relative;
+}
+
+.memory-form h3:after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: #e6c8b1;
+  margin: 10px auto 0;
+}
+
+.memory-form label {
+  color: #777;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.memory-form input[type="file"] {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.memory-form input[type="file"]::file-selector-button {
+  background: #a387f7;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  margin-right: 10px;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s;
+  font-size: 0.9em;
+}
+
+.memory-form input[type="file"]::file-selector-button:hover {
+  background: #8a6be2;
+}
+
+/* Image upload area styling */
+.image-upload-area {
+  border: 2px dashed #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  background-color: #fafafa;
+  margin-bottom: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.image-upload-area:hover {
+  border-color: #a387f7;
+  background-color: #f5f5f5;
+}
+
+.image-upload-area p {
+  color: #888;
+  margin: 10px 0;
+}
+
+/* Emotion-specific select styling */
+.memory-form select.heartwarming,
+.compact-memory-form .emotion-selector select.heartwarming {
+  border-color: var(--pink);
+}
+
+.memory-form select.sad,
+.compact-memory-form .emotion-selector select.sad {
+  border-color: var(--blue);
+}
+
+.memory-form select.mysterious,
+.compact-memory-form .emotion-selector select.mysterious {
+  border-color: var(--lavender);
+}
+
+.memory-form select.funny,
+.compact-memory-form .emotion-selector select.funny {
+  border-color: var(--yellow);
+}
+
+.memory-form select.regretful,
+.compact-memory-form .emotion-selector select.regretful {
+  border-color: var(--green);
+}
+
+.memory-form select.inspiring,
+.compact-memory-form .emotion-selector select.inspiring {
+  border-color: var(--teal);
+}
+
+/* Button styling */
+.memory-form button {
+  background: #a387f7;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(163, 135, 247, 0.3);
+}
+
+.memory-form button:hover:not(:disabled) {
+  background: #8a6be2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(163, 135, 247, 0.4);
+}
+
+.memory-form button:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.memory-form button.loading {
+  background: #8a6be2;
+}
+
+/* Character counter */
+.char-counter {
+  text-align: right;
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.char-counter.error {
+  color: #ff7675;
+}
+
+@media (max-width: 768px) {
+  .memory-form .form-row,
+  .compact-memory-form .form-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .memory-form .form-column {
+    margin-bottom: 15px;
+  }
+  
+  .memory-form-container {
+    padding: 20px;
+  }
+  
+  .compact-memory-form .form-actions {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .compact-memory-form .post-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.memory-form textarea {
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid #e8e8e8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #333;
+  min-height: 150px;
+  resize: vertical;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.memory-form textarea:focus {
+  outline: none;
+  border-color: #a387f7;
+  box-shadow: 0 0 0 2px rgba(163, 135, 247, 0.2);
+}
+
+.memory-form select,
+.memory-form input[type="text"],
+.memory-form input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95em;
+  color: #333;
+  background-color: #fafafa;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.memory-form select:focus,
+.memory-form input:focus {
+  outline: none;
+  border-color: #a387f7;
+  box-shadow: 0 0 0 2px rgba(163, 135, 247, 0.2);
+}

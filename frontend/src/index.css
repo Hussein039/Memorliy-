@@ -1,0 +1,611 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --purple: #a387f7;
+  --pink: #ffbdd4;
+  --blue: #a8c7fa;
+  --lavender: #e3d0ff;
+  --yellow: #fff1a8;
+  --green: #c0ebd7;
+  --teal: #b4f0f0;
+  --bg-color: #f8f9fd;
+  --text-color: #333;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease;
+  --font-heading: 'Dancing Script', cursive;
+  --font-body: 'Poppins', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  line-height: 1.6;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0 30px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 3.5em;
+  margin: 0;
+  font-family: var(--font-heading);
+  color: var(--purple);
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2em;
+  color: #777;
+  font-style: italic;
+  margin: 10px 0 25px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #777;
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+  padding-bottom: 3px;
+}
+
+nav a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--purple);
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--purple);
+}
+
+nav a:hover:after {
+  width: 100%;
+}
+
+/* Memory Card */
+.memory-card {
+  background: #ffffff;
+  border: none;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  border-left: 4px solid;
+  cursor: pointer;
+}
+
+.memory-card.Heartwarming {
+  border-left-color: var(--pink);
+}
+
+.memory-card.Sad {
+  border-left-color: var(--blue);
+}
+
+.memory-card.Mysterious {
+  border-left-color: var(--lavender);
+}
+
+.memory-card.Funny {
+  border-left-color: var(--yellow);
+}
+
+.memory-card.Regretful {
+  border-left-color: var(--green);
+}
+
+.memory-card.Inspiring {
+  border-left-color: var(--teal);
+}
+
+.memory-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.memory-card h3 {
+  margin-top: 0;
+  font-family: var(--font-heading);
+  font-size: 1.8em;
+  color: #333;
+  letter-spacing: 0.5px;
+}
+
+.memory-card p {
+  line-height: 1.7;
+  font-size: 1.05em;
+  color: #555;
+}
+
+.memory-date {
+  font-size: 0.85em;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.memory-emotion {
+  display: inline-block;
+  margin-top: 0;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  color: #fff;
+  font-weight: 500;
+}
+
+.memory-emotion.Heartwarming {
+  background-color: var(--pink);
+}
+
+.memory-emotion.Sad {
+  background-color: var(--blue);
+}
+
+.memory-emotion.Mysterious {
+  background-color: var(--lavender);
+  color: #555;
+}
+
+.memory-emotion.Funny {
+  background-color: var(--yellow);
+  color: #555;
+}
+
+.memory-emotion.Regretful {
+  background-color: var(--green);
+  color: #555;
+}
+
+.memory-emotion.Inspiring {
+  background-color: var(--teal);
+  color: #555;
+}
+
+.memory-card .reactions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.memory-card .reactions button {
+  margin-right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.2s;
+  color: #888;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.memory-card .reactions button:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  color: var(--purple);
+}
+
+/* Memory Form */
+.memory-form-container {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--card-shadow);
+  border: none;
+}
+
+.memory-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.memory-form h3 {
+  font-family: var(--font-heading);
+  color: var(--purple);
+  font-size: 2.2em;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.memory-form textarea {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: var(--font-body);
+  font-size: 1em;
+  min-height: 150px;
+  resize: vertical;
+  margin-bottom: 15px;
+  background-color: #fafafa;
+  color: #333;
+  transition: border-color 0.3s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.memory-form textarea:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 2px rgba(163, 135, 247, 0.2);
+}
+
+.memory-form .form-row {
+  display: flex;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.memory-form .form-column {
+  flex: 1;
+}
+
+.memory-form select,
+.memory-form input[type="text"],
+.memory-form input[type="date"] {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: #333;
+  background-color: #fafafa;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.memory-form select:focus,
+.memory-form input:focus {
+  outline: none;
+  border-color: var(--purple);
+  box-shadow: 0 0 0 2px rgba(163, 135, 247, 0.2);
+}
+
+.memory-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9em;
+  color: #777;
+  font-weight: 500;
+}
+
+.memory-form button {
+  align-self: center;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 30px;
+  font-family: var(--font-body);
+  font-size: 1em;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(163, 135, 247, 0.3);
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.memory-form button:hover {
+  background: #8a6be2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(163, 135, 247, 0.4);
+}
+
+.memory-form button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Memory Feed */
+.memory-feed-container {
+  padding: 20px 0;
+}
+
+.memory-list {
+  margin-top: 30px;
+}
+
+/* Random Memory Page */
+.random-memory-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.random-memory-card {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: var(--transition);
+}
+
+.random-memory-text {
+  font-size: 1.4em;
+  line-height: 1.8;
+  margin: 25px 0;
+  color: #333;
+  font-style: italic;
+}
+
+.random-memory-emotion {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.random-memory-emotion.Heartwarming {
+  background-color: var(--pink);
+  color: #fff;
+}
+
+.random-memory-emotion.Sad {
+  background-color: var(--blue);
+  color: #fff;
+}
+
+.random-memory-emotion.Mysterious {
+  background-color: var(--lavender);
+}
+
+.random-memory-emotion.Funny {
+  background-color: var(--yellow);
+}
+
+.random-memory-emotion.Regretful {
+  background-color: var(--green);
+}
+
+.random-memory-emotion.Inspiring {
+  background-color: var(--teal);
+}
+
+.random-memory-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.random-memory-nav button,
+.random-memory-nav a button {
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(163, 135, 247, 0.3);
+}
+
+.random-memory-nav button:hover {
+  background: #8a6be2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(163, 135, 247, 0.4);
+}
+
+/* Filter Component */
+.memory-filter {
+  margin: 20px 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filter-button {
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 20px;
+  font-family: var(--font-body);
+  font-size: 0.9em;
+  color: #333;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.filter-button:hover {
+  transform: translateY(-2px);
+}
+
+.filter-button.all {
+  background-color: var(--purple);
+  color: white;
+}
+
+.filter-button.Heartwarming {
+  background-color: var(--pink);
+  color: white;
+}
+
+.filter-button.Sad {
+  background-color: var(--blue);
+  color: white;
+}
+
+.filter-button.Mysterious {
+  background-color: var(--lavender);
+}
+
+.filter-button.Funny {
+  background-color: var(--yellow);
+}
+
+.filter-button.Regretful {
+  background-color: var(--green);
+}
+
+.filter-button.Inspiring {
+  background-color: var(--teal);
+}
+
+.filter-button.newest, 
+.filter-button.popular {
+  background-color: #f0f0f0;
+}
+
+/* Placeholder for image in memory card */
+.memory-image {
+  margin: 20px 0;
+  border-radius: 12px;
+  max-width: 100%;
+  max-height: 350px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Image Upload Area */
+.image-upload-area {
+  border: 2px dashed #e0e0e0;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  background-color: #fafafa;
+  color: #777;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.image-upload-area:hover {
+  border-color: var(--purple);
+  background-color: #f5f5f5;
+}
+
+.image-upload-icon {
+  font-size: 2em;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+/* Character counter */
+.char-counter {
+  text-align: right;
+  font-size: 0.85em;
+  color: #999;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+.char-counter.error {
+  color: #ff7675;
+}
+
+/* Page Title */
+.page-title {
+  font-family: var(--font-heading);
+  color: var(--purple);
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Avatar and user related styles */
+.avatar-dropdown {
+  position: relative;
+}
+
+.avatar-dropdown img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--purple);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  padding: 8px 0;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #555;
+  transition: background 0.2s;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font-size: 0.9em;
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: #f7f4ff;
+  color: var(--purple);
+}
